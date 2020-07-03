@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+.table tbody tr:hover { background-color: #D0F5FB; cursor: pointer; }
+.navbar-brand { font-weight: 600; color: #3395F0 !important; }
+.panel-title span { color:#3395F0; }
+
+.datos-title {
+	text-align: center;
+	margin-top: -25px;
+	font-size: 18px;
+  font-weight: 600; 
+  color:#3395F0; 
+  }
+  
+.num1,.num2,.num3 {}
+
+.block-right{float:right; }
+  
+.container-fluid .jumbotron {padding: 30px;}
+.input-group {margin:6px;}  
+.input-group-addon  {padding: 6px 6px;}  
+.form-control {padding: 6px 6px;}
+.col-my { padding-left:2px; padding-right:2px; }  
+.ui-dialog { z-index:3; }  
+
+.cond-title
+  {
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 30px;
+  font-weight: 900;
+  color: #224;
+  font-size:16px;
+  }
+
+.cond-item
+  {
+  white-space: nowrap;
+  vertical-align: middle;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 20px;
+  font-weight: 600;
+  color: #3D3D3D !important;
+  font-size:12px;
+  }
+ 
+.cond-item a { color: #2D4AF7; text-decoration:none; }
+.cond-item a:hover {color: #f00;}
+  
+.panel-body { padding-bottom:0px; padding-top:0px; }
+.panel-body table { margin-bottom:0px; }
+.panel-footer { height:40px; padding-bottom:0px; padding-top:0px;}
+
+.sel-orden { display:table-cell; vertical-align:middle; height:40px; font-size:14px; color:#446;}  
+.sel-orden select { border:solid #446 1px;}  
+  
+.total
+  {
+  text-align:right;
+  font-weight:bold;
+  margin-right:15px;
+  }
+  
+.total span { color:#2D62F4; }
+.enUso {color:#FF0000; font-weight: 600;}
+
+
+  

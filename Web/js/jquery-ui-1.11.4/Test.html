@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+
+  <link href="jquery-ui.css" rel="stylesheet">
+  <script src="external/jquery/jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+  <script src="jquery.ui.datepicker-es.js"></script>
+
+  <script>
+  var OneDay = (1000*60*60*24);
+  var pickerFrom;
+  var pickerTo;
+  var numberDays;
+  
+  function CalDias()
+   {
+   var fIni = pickerFrom.datepicker( "getDate" );
+   var fEnd = pickerTo.datepicker( "getDate" );
+   var nDay = numberDays.val();
+   if( nDay<= 0 ) nDay = 1;
+   
+   if( !fIni  )
+	{
+	if( fEnd ) fIni = new Date(fEnd.getTime()- nDay*OneDay);
+	else       fIni = new Date();
+
+	pickerFrom.datepicker( "setDate", fIni );
+	}
+   
+   if( !fEnd  )
+	{
+	fEnd = new Date(fIni.getTime()+nDay*OneDay);
+	pickerTo.datepicker( "setDate", fEnd );
+	}
+
+   if( fEnd <= fIni )
+	{
+	fEnd = new Date(fIni.getTime()+nDay*OneDay);
+	pickerTo.datepicker( "setDate", fEnd );
+	}
+	
+   var min = new Date(fIni.getTime()+OneDay);	
+   pickerTo.datepicker( "option", "minDate", min );	
+   
+   nDay = (fEnd.getTime() - fIni.getTime()) / OneDay;
+   
+   numberDays.val( Math.round(nDay) );
+   }
+  
+  function ChangeNDays()
+   {
+   var nDay = numberDays.val();
+   if( nDay<=0 )
+	{
+	nDay = 1;
+	numberDays.val(nDay);
+	}
+   
+   var fIni = pickerFrom.datepicker( "getDate" );
+   if( !fIni )
+	{
+    fIni = new Date();
+	pickerFrom.datepicker( "setDate", fIni );
+	}
+	
+   var fEnd = new Date( fIni.getTime() + nDay * OneDay );
+   pickerTo.datepicker( "setDate", fEnd );
+   }
+    
+  $(function() 
+	{
+	pickerFrom = $("#from");
+	pickerTo   = $("#to"  );
+	numberDays = $("#dias");
+	
+    numberDays.change( ChangeNDays );
+	
+    pickerFrom.datepicker(
+	  {
+      showButtonPanel: true,
+      changeMonth: true,
+      changeYear: true,	
+	  dateFormat:"dd M yy",
+	  minDate: new Date(),
+      onClose: CalDias
+      });
+	
+    pickerTo.datepicker(
+	  {
+      showButtonPanel: true,
+      changeMonth: true,
+      changeYear: true,	
+	  dateFormat:"dd M yy",
+	  minDate: new Date(),
+      onClose: CalDias
+      });
+	});
+  
+  </script>
+</head>
+<body>
+ 
+<label for="from">Desde</label>
+<input type="text" id="from" name="from">
+<label for="to">Hasta</label>
+<input type="text" id="to" name="to">
+<label for="dias">Dias</label>
+<input type="number" id="dias" value="1" name="dias">
+ 
+ 
+</body>
+</html>

@@ -1,0 +1,5 @@
+XAMPP
+https://www.apachefriends.org/download.html
+
+DBEdit
+https://es.wikipedia.org/w/index.php?title=DBEdit&action=edit&redlink=1

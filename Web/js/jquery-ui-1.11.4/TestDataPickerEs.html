@@ -1,0 +1,27 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>jQuery UI Datepicker - Opciones de localización</title>
+
+  <link href="jquery-ui.css" rel="stylesheet">
+  <script src="external/jquery/jquery.js"></script>
+  <script src="jquery-ui.js"></script>
+  <script src="jquery.ui.datepicker-es.js"></script>
+
+<script>
+$(function () {
+$.datepicker.setDefaults($.datepicker.regional["es"]);
+$("#datepicker").datepicker({
+firstDay: 1
+});
+});
+</script>
+</head>
+
+<body>
+Fecha:
+<div id="datepicker"></div>
+</body>
+</html>
+
